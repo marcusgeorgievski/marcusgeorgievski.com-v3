@@ -1,14 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Header, { HeaderAnimated } from "@/components/header";
+import { HeaderAnimated } from "@/components/header";
 import { cn } from "@/lib/utils";
-import InteractiveBackground from "@/experimental/script";
-const _ = require("../experimental/script");
-
-const inter = Inter({ subsets: ["latin"] });
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+import { Toaster } from "@/components/shadcn/ui/toaster";
+import { inter } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Marcus Georgievski",
@@ -33,7 +29,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
           <main className="max-w-[1100px] px-6 md:px-8 lg:px-10 pt-4  mx-auto pb-20 relative antialiased">
@@ -41,6 +37,8 @@ export default function RootLayout({
             {/* <Header /> */}
 
             {children}
+
+            <Toaster />
           </main>
         </ThemeProvider>
       </body>

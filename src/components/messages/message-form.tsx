@@ -72,7 +72,7 @@ export default function MessageForm() {
   }
 
   return (
-    <div id="contact">
+    <div id="message">
       <h3
         className={cn(
           jetBrainsMono.className,
@@ -128,8 +128,8 @@ export default function MessageForm() {
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="email, phone, etc."
-                    className="resize-none h-[150px]"
+                    placeholder="uh hello..."
+                    className="resize-none h-[80px]"
                     {...field}
                   />
                 </FormControl>
@@ -138,7 +138,11 @@ export default function MessageForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" disabled={isPending}>
+          <Button
+            type="submit"
+            disabled={isPending}
+            aria-label="Submit message"
+          >
             Submit
           </Button>
         </form>

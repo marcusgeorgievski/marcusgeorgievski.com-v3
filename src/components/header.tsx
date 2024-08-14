@@ -25,7 +25,12 @@ export default function Header() {
       {/*  */}
       <div className="px-4 md:px-8 flex items-center gap-3 justify-between w-full">
         <button className="hidden md:block" onClick={() => scrollTo("top")}>
-          <CookieIcon height={17} width={17} className="text-slate-300" />
+          <CookieIcon
+            height={17}
+            width={17}
+            className="text-slate-300"
+            aria-label="Home"
+          />
           <Image
             src="/ie.png"
             alt="icon"
@@ -34,11 +39,12 @@ export default function Header() {
             className="rounded-md hidden"
           />
         </button>
-        <ul className="flex items-center gap-6 text-slate-400 text-sm">
+        <ul className="flex items-center gap-6 text-slate-400 text-xs sm:text-sm">
           <li>
             <button
               className="hover:text-white  transition-all"
-              onClick={() => scrollTo("top")}
+              onClick={() => scrollTo("experience")}
+              aria-label="Experience"
             >
               Experience
             </button>
@@ -47,6 +53,7 @@ export default function Header() {
             <button
               className="hover:text-white  transition-all"
               onClick={() => scrollTo("projects")}
+              aria-label="Projects"
             >
               Projects
             </button>
@@ -54,15 +61,20 @@ export default function Header() {
           <li>
             <button
               className="hover:text-white  transition-all"
-              onClick={() => scrollTo("skills")}
+              onClick={() => scrollTo("message")}
+              aria-label="Message"
             >
-              About
+              Msg
             </button>
           </li>
         </ul>
 
         <nav className="flex items-center gap-4 text-slate-300">
-          <Link href={"https://devpost.com/marcusgeorgievski"} target="_blank">
+          <Link
+            href={"https://devpost.com/marcusgeorgievski"}
+            target="_blank"
+            aria-label="Devpost link"
+          >
             <CodeIcon
               height={17}
               width={17}
@@ -72,6 +84,7 @@ export default function Header() {
           <Link
             href={"https://www.linkedin.com/in/marcusgeorgievski"}
             target="_blank"
+            aria-label="LinkedIn link"
           >
             <LinkedInLogoIcon
               height={17}
@@ -79,7 +92,11 @@ export default function Header() {
               className="hover:scale-[1.2]  hover:text-white transition-all"
             />
           </Link>
-          <Link href={"https://github.com/marcusgeorgievski"} target="_blank">
+          <Link
+            href={"https://github.com/marcusgeorgievski"}
+            target="_blank"
+            aria-label="GitHub link"
+          >
             <GitHubLogoIcon
               height={17}
               width={17}

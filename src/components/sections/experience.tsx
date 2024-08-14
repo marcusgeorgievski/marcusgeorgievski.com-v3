@@ -1,3 +1,4 @@
+"use client";
 import { experiences } from "@/lib/data";
 import { jetBrainsMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -25,8 +26,9 @@ export default function Experience({ className }: { className?: string }) {
               initial={{ opacity: 0, y: 20, scale: 0.98, rotate: 1 }}
               animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
+              key={index}
             >
-              <ExperienceCard key={index} {...experience} />
+              <ExperienceCard {...experience} />
             </motion.div>
           ))}
         </section>

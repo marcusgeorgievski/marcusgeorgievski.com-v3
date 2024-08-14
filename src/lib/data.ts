@@ -21,7 +21,7 @@ export const projects = [
   {
     title: "AWS Microservice",
     description:
-      "Microservice for authenticated users to upload + store diverse file objects.",
+      "Microservice for authenticated users to upload + retrieve diverse file objects.",
     image: "/fragments.png",
     github: "https://github.com/marcusgeorgievski/fragments",
     tags: ["AWS", "Docker", "JavaScript", "Express"],

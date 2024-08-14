@@ -1,10 +1,11 @@
+"use client";
 import { jetBrainsMono, xp } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { MixIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { useState } from "react";
 
-function Highlight({ className }: { className?: string }) {
+export default function Highlight({ className }: { className?: string }) {
   const [value, setValue] = useState("");
 
   function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -36,8 +37,8 @@ function Highlight({ className }: { className?: string }) {
             <Image
               src="/ie.png"
               alt="me"
-              width={40}
-              height={40}
+              width={30}
+              height={30}
               className="rounded-md "
             />
             <p className={cn(xp.className, "text-xl")}>Nothing here yet...</p>

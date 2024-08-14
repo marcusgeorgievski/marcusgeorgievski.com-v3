@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Message } from "@/lib/types";
+
 import moment from "moment-timezone";
 import { deleteMessage } from "@/actions/message";
 import { useTransition } from "react";
@@ -13,6 +13,14 @@ import {
   LayersIcon,
   TrashIcon,
 } from "@radix-ui/react-icons";
+
+interface Message {
+  id: number;
+  name: string;
+  contact: string;
+  body: string;
+  createdAt: string;
+}
 
 interface MessagesProps {
   messages: Message[];
@@ -52,9 +60,11 @@ export default function MessageList({ messages }: any) {
               />
             </button>
             <button onClick={() => setGrid(false)} className="p-1">
-              <LayersIcon />
-              className=
-              {`${grid ? "text-slate-600" : "text-slate-200"} text-sm`}
+              <LayersIcon
+                className={`${
+                  grid ? "text-slate-600" : "text-slate-200"
+                } text-sm`}
+              />
             </button>
           </div>
           <div
@@ -92,7 +102,7 @@ export default function MessageList({ messages }: any) {
                     </p>
                   </div>
 
-                  <p className="font-mono text-xs dark:text-slate-300 text-slate-800">
+                  <p className="font-mono text-xs dark:text-slate-300 text-slate-800 text-wrap break-words ">
                     {message.body}
                   </p>
 

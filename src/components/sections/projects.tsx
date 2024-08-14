@@ -1,3 +1,4 @@
+"use client";
 import { experiences, projects } from "@/lib/data";
 import { jetBrainsMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -12,11 +13,11 @@ export default function Projects({ className }: { className?: string }) {
   const isInView = useInView(ref, { once: true, margin: "-60px 0px" });
 
   return (
-    <div className={cn(className, "m")} id="projects">
+    <div className={cn(className)} id="projects">
       <h3
         className={cn(
           jetBrainsMono.className,
-          "text-sm text-slate-400 mb-8 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-slate-700 lg:border-none "
+          "text-sm text-slate-400 mb-4 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-slate-700 lg:border-none "
         )}
       >
         <StackIcon height={16} width={16} />
@@ -32,6 +33,7 @@ export default function Projects({ className }: { className?: string }) {
             initial={{ opacity: 0, y: 40, scale: 1 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: index * 0.2 }}
+            key={index}
           >
             <ProjectCard {...project} />
           </motion.div>

@@ -24,6 +24,7 @@ export default function ProjectCard({
       href={live! || github!}
       target="_blank"
       className="md:gap-8 p-4 w-full h-full block transition-all hover:bg-accent/40 rounded px-4 group/project"
+      aria-label={title}
     >
       <Image
         src={image}
