@@ -20,7 +20,7 @@ export default function Highlight({ className }: { className?: string }) {
         <h3
           className={cn(
             jetBrainsMono.className,
-            "text-sm text-slate-400 mb-8 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-slate-700 lg:border-none "
+            "text-sm text-slate-400 mb-6 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-slate-700 lg:border-none "
           )}
         >
           <MixIcon height={16} width={16} />
