@@ -1,113 +1,109 @@
-import Image from "next/image";
+"use client";
+import ExperienceCard from "@/components/experience-card";
+import ProjectCard from "@/components/project-card";
+import { experiences, projects } from "@/lib/data";
+import { jetBrainsMono } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
+import { CodeIcon } from "@radix-ui/react-icons";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="grid grid-cols-1 gap-[120px]">
+      <div className="xl:grid xl:grid-cols-[450px,auto] xl:py-20 flex flex-col gap-16">
+        <div className="pt-12 xl:pt-0  xl:w-full">
+          <div className="xl:sticky top-20 ">
+            <Hero />
+          </div>
+
+          <div></div>
+        </div>
+
+        <div>
+          <Experience />
         </div>
       </div>
+      {/* <motion.div
+        initial={{ opacity: 0, y: 40, scale: 1 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.6 }}
+      > */}
+      <Projects />
+      {/* </motion.div> */}
+    </div>
+  );
+}
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+function Hero({ className }: { className?: string }) {
+  return (
+    <div className={cn(className, "relative")}>
+      <h2 className="text-4xl font-bold mb-1" id="home">
+        Marcus Georgievski
+      </h2>
+
+      <h3 className="text-lg @ HTS / KORE font-light text-slate-400 mb-8 ">
+        Software Developer
+      </h3>
+
+      <p
+        className={cn(
+          jetBrainsMono.className,
+          "text-xs max-w-[400px] text-slate-300 leading-5"
+        )}
+      >
+        Building full stack applications with a focus on performance and user
+        experience. Currently working with Go.
+      </p>
+
+      {/* <div className="absolute top-0 opacity-10 inset-0 h-full w-full  bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] z-10 dot-mask" /> */}
+    </div>
+  );
+}
+
+function Experience({ className }: { className?: string }) {
+  return (
+    <div className={cn(className, "max-w-[800px] mx-auto")} id="experience">
+      {/* <div className="flex items-center gap-3 mb-10 p-2 rounded border-dashed border/ border-slate-700 justify-between "> */}
+      {/* <h3 className="text-2xl font-semibold ">Experience</h3> */}
+      {/* <KeyboardIcon height={20} width={20} /> */}
+      {/* </div> */}
+
+      <div className="grid grid-cols-[auto,auto]">
+        <section className="grid grid-cols-1 gap-20 border-dashed">
+          {experiences.map((experience, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 1 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <ExperienceCard key={index} {...experience} />
+            </motion.div>
+          ))}
+        </section>
+      </div>
+    </div>
+  );
+}
+
+function Projects({ className }: { className?: string }) {
+  return (
+    <div className={cn(className, "m")} id="projects">
+      <div className="flex items-center gap-3 mb-4 p-2 rounded border-dashed  justify-between group/project">
+        <h3 className={cn(jetBrainsMono.className, "text-xl")}>Projects</h3>
+        <CodeIcon height={20} width={20} />
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+        {projects.map((project, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 1 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+          >
+            <ProjectCard {...project} />
+          </motion.div>
+        ))}
+      </section>
+    </div>
   );
 }
