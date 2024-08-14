@@ -27,11 +27,13 @@ export default function ExperienceCard({
       <div>
         <p className="font-semibold">{title}</p>
         <div className="flex items-baseline justify-between w-full">
-          <p className="text-slate-400 text-sm ">{company}</p>
+          <p className="text-slate-200 text-sm ">{company}</p>
           <p className="text-xs text-slate-500 ">{date}</p>
         </div>
         <div className="mb-4"></div>
-        <p className="text-sm text-slate-300 leading-6/">{description}</p>
+        <p className="text-sm text-muted-foreground leading-6/">
+          {description}
+        </p>
       </div>
     </div>
   );

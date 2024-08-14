@@ -2,12 +2,15 @@
 import { scrollTo } from "@/lib/utils";
 import {
   CodeIcon,
+  CookieIcon,
   GitHubLogoIcon,
+  LayersIcon,
   LinkedInLogoIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -22,7 +25,14 @@ export default function Header() {
       {/*  */}
       <div className="px-4 md:px-8 flex items-center gap-3 justify-between w-full">
         <button className="hidden md:block" onClick={() => scrollTo("top")}>
-          <PersonIcon height={17} width={17} className="text-slate-300" />
+          <CookieIcon height={17} width={17} className="text-slate-300" />
+          <Image
+            src="/ie.png"
+            alt="icon"
+            width={34}
+            height={34}
+            className="rounded-md hidden"
+          />
         </button>
         <ul className="flex items-center gap-6 text-slate-400 text-sm">
           <li>

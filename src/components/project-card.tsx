@@ -23,7 +23,7 @@ export default function ProjectCard({
     <Link
       href={live! || github!}
       target="_blank"
-      className="md:gap-8 p-4 w-full transition-all hover:bg-accent/40 rounded group/project "
+      className="md:gap-8 p-4 w-full h-full block transition-all hover:bg-accent/40 rounded px-4 group/project"
     >
       <Image
         src={image}
@@ -35,7 +35,7 @@ export default function ProjectCard({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
 
-      <div className="group-hover/project:pl-2 transition-all">
+      <div className="group-hover/project:translate-x-2 transition-all">
         <p className="font-semibold text-lg mb-2">{title}</p>
         <p className="text-sm text-muted-foreground">{description}</p>
         {tags && (
