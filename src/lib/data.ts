@@ -31,7 +31,7 @@ export const projects = [
     description:
       "All-in-one student management platform for tracking assessments and organizing notes.",
     image: "/studyhome.png",
-    live: "https://prj-frontend.vercel.app/",
+    live: "https://prj-frontend.vercel.app",
     tags: ["Next.js", "React", "SQL", "Auth", "Express"],
   },
   {
