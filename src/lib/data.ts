@@ -30,7 +30,7 @@ export const projects = [
     title: "StudyHome",
     description:
       "All-in-one student management platform for tracking assessments and organizing notes.",
-    image: "/studyhome.png",
+    image: "/studyHome.png",
     live: "https://prj-frontend.vercel.app",
     tags: ["Next.js", "React", "SQL", "Auth", "Express"],
   },
