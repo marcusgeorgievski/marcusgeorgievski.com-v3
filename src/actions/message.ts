@@ -30,7 +30,6 @@ export async function createMessage(values: z.infer<typeof messageSchema>) {
     const results =
       await sql`INSERT INTO "Message" (name, contact, body) VALUES (${name}, ${contact}, ${message})`;
 
-    console.log(process.env.TITLE);
     if (name.toLocaleLowerCase() == "em") {
       return {
         title: process.env.TITLE,
