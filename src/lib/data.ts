@@ -3,17 +3,19 @@ export const experiences = [
     title: "Software Developer",
     company: "HTS / KORE",
     date: "Sep 2024 - Present",
-    description:
-      "Writing comprehensive automation tests for enterprise software. Involved in the planning and implementation of software.",
+    description: "",
+    // "Writing comprehensive automation tests for enterprise software. Involved in the planning and implementation of software.",
     image: "/kore.png",
+    // tags: ["Smalltalk", "JavaScript", "Cypress"],
   },
   {
     title: "Full Stack Developer",
     company: "Seneca Polytechnic",
     date: "Jun 2024 - Aug 2024",
     description:
-      "Built and maintained front and back-end components, refactored DB schemas to improve data accessibility.",
+      "Developed full-stack web functionality. Improved database schema for enhanced data maintainability and accessibility",
     image: "/seneca.jpg",
+    // tags: ["React", "Express", "MongoDB"],
   },
 ];
 

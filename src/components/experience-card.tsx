@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Tag from "./tag";
 
 interface ExperienceCardProps {
   title: string;
@@ -6,6 +7,7 @@ interface ExperienceCardProps {
   date: string;
   description: string;
   image: string;
+  tags?: string[];
 }
 
 export default function ExperienceCard({
@@ -14,6 +16,7 @@ export default function ExperienceCard({
   date,
   description,
   image,
+  tags,
 }: ExperienceCardProps) {
   return (
     <div className="w-full grid grid-cols-[45px,auto]  max-w-[700px]">
@@ -30,10 +33,17 @@ export default function ExperienceCard({
           <p className="text-slate-200 text-sm ">{company}</p>
           <p className="text-xs text-slate-500 ">{date}</p>
         </div>
-        <div className="mb-4"></div>
+        <div className="mb-2.5"></div>
         <p className="text-sm text-muted-foreground leading-6/">
           {description}
         </p>
+        <div className="py-0 flex gap-1.5">
+          {tags?.map((tag: any, index: number) => (
+            <Tag tag={tag} key={index} classname="text-">
+              {tag}
+            </Tag>
+          ))}
+        </div>
       </div>
     </div>
   );

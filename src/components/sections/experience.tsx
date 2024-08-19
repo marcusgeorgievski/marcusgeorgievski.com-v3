@@ -20,7 +20,7 @@ export default function Experience({ className }: { className?: string }) {
       </h3>
 
       <div className="grid grid-cols-[auto,auto]">
-        <section className="grid grid-cols-1 gap-10 border-dashed">
+        <section className="grid grid-cols-1 gap-14 border-dashed">
           {experiences.map((experience, index) => (
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.98, rotate: 1 }}
