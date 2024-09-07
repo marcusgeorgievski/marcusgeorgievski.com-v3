@@ -50,7 +50,7 @@ export default function Highlight({ className }: { className?: string }) {
                 href="https://lets-go.alexedwards.net/"
                 target="_blank"
               >
-                Let's Go
+                Let&apos;s Go
               </Link>
             </li>
           </ul>
