@@ -4,8 +4,12 @@ import { z } from "zod";
 import sql from "@/lib/db";
 
 export async function getMessages() {
-  const results = await sql`SELECT * FROM "Message" ORDER BY "createdAt" ASC`;
-  return results;
+  try {
+    const results = await sql`SELECT * FROM "Message" ORDER BY "createdAt" ASC`;
+    return results;
+  } catch (error) {
+    return [];
+  }
 }
 
 export async function deleteMessage(id: number) {

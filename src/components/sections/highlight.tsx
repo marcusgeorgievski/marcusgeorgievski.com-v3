@@ -3,6 +3,7 @@ import { jetBrainsMono, xp } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { MixIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Highlight({ className }: { className?: string }) {
@@ -20,7 +21,7 @@ export default function Highlight({ className }: { className?: string }) {
         <h3
           className={cn(
             jetBrainsMono.className,
-            "text-sm text-slate-400 mb-6 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-slate-700 lg:border-none "
+            "text-sm text-slate-400 mb-5 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-slate-700 lg:border-none "
           )}
         >
           <MixIcon height={16} width={16} />
@@ -30,10 +31,30 @@ export default function Highlight({ className }: { className?: string }) {
         <div
           className={cn(
             jetBrainsMono.className,
-            "flex items-center gap-6 text-slate-500 text-sm font-light"
+            "flex items-center gap-4 text-slate-500 text-sm font-light"
           )}
         >
-          <div className="flex  mb-4 gap-4 w-full items-center">
+          <ul className="list-disc/ pl-8 space-y-0">
+            <li>
+              Currenly reading{" "}
+              <Link
+                className="text-blue-500 inline hover:underline underline-offset-2"
+                href="https://www.oreilly.com/library/view/learning-go/9781492077206/"
+                target="_blank"
+              >
+                Learning Go
+              </Link>{" "}
+              and{" "}
+              <Link
+                className="text-blue-500 inline hover:underline underline-offset-2"
+                href="https://lets-go.alexedwards.net/"
+                target="_blank"
+              >
+                Let's Go
+              </Link>
+            </li>
+          </ul>
+          {/* <div className="flex  mb-4 gap-4 w-full items-center">
             <Image
               src="/ie.png"
               alt="me"
@@ -42,7 +63,7 @@ export default function Highlight({ className }: { className?: string }) {
               className="rounded-md "
             />
             <p className={cn(xp.className, "text-xl")}>Nothing here yet...</p>
-          </div>
+          </div> */}
         </div>
       </div>
     );
