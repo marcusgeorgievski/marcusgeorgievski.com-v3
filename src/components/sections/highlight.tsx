@@ -52,6 +52,7 @@ export default function Highlight({ className }: { className?: string }) {
               >
                 Let&apos;s Go
               </Link>
+              .
             </li>
           </ul>
           {/* <div className="flex  mb-4 gap-4 w-full items-center">

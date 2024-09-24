@@ -3,9 +3,7 @@ export const experiences = [
     title: "Software Developer",
     company: "HTS / KORE",
     date: "Sep 2024 - Present",
-    description:
-      "Object-oriented programming in Smalltalk. Automated testing with Cypress.",
-    // "Writing comprehensive automation tests for enterprise software. Involved in the planning and implementation of software.",
+    description: "Developing a secure .NET-based employee portal with Azure.",
     image: "/kore.png",
     // tags: ["Smalltalk", "JavaScript", "Cypress"],
   },
